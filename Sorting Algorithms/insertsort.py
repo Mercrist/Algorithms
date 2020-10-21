@@ -1,6 +1,7 @@
 def inSort(arr):
     '''Insertion Sort Algorithm'''
     '''Time Complexity: O(n^2)'''
+    '''O(n) in Best Case'''
     for i in range(1, len(arr)):
         toSwap = arr[i]
         index = i

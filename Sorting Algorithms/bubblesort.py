@@ -1,7 +1,7 @@
 def bubbleSort(arr):
     '''Bubble Sort Algorithm'''
     '''Time Complexity: O(n^2)'''
-    '''O(n) if data is nearly sorted'''
+    '''O(n) in Best Case'''
     i = 0
     while i < len(arr)-1: #elements in bubble sort are sorted and moved to the top
         if arr[i] > arr[i+1]:
