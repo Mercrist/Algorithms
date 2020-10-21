@@ -1,5 +1,5 @@
 def bubbleSort(arr):
-    '''Insertion Sort Algorithm'''
+    '''Bubble Sort Algorithm'''
     '''Time Complexity: O(n^2)'''
     '''O(n) if data is nearly sorted'''
     i = 0

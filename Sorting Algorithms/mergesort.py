@@ -1,5 +1,5 @@
 def mergeSort(arr):
-    '''Insertion Sort Algorithm'''
+    '''Merge Sort Algorithm'''
     '''Time Complexity: O(n*log(n))'''
     if len(arr) <= 1: #base case
         return arr
