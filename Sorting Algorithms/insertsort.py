@@ -1,7 +1,8 @@
 def inSort(arr):
     '''Insertion Sort Algorithm'''
-    '''Time Complexity: O(n^2)'''
-    '''O(n) in Best Case'''
+    '''Average Case: O(n^2)'''
+    '''Best Case: Ω(n)''' #Occurs when data is already sorted (passes through array once)
+    '''Worst Case: Θ(n^2)'''
     for i in range(1, len(arr)):
         toSwap = arr[i]
         index = i

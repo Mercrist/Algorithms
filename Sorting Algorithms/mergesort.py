@@ -1,6 +1,9 @@
+from random import randint
 def mergeSort(arr):
     '''Merge Sort Algorithm'''
-    '''Time Complexity: Consistently O(n*log(n))'''
+    '''Average: O(n*log(n))'''
+    '''Best Case: Ω(n*log(n))'''
+    '''Worst Case: θ(n*log(n))'''
     if len(arr) <= 1: #base case
         return arr
 
@@ -25,5 +28,5 @@ def merge(half1, half2):
     sortList.extend(half2[j:])
     return sortList
 
-A = [64, 25, 12, 22, 11]
+A = [randint(1,100) for i in range(15)]
 print(mergeSort(A)) 
