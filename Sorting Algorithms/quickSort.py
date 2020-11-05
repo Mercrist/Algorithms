@@ -1,9 +1,9 @@
 import random
 def quickSort(arr, start, end):
     '''Quick Sort Algorithm'''
-    '''Worst Case: O(n^2). Occurs when pivot is greatest or smallest item.'''
-    '''Best Case: Ω(n*log(n))'''
     '''Average: O(n*log(n))'''
+    '''Best Case: Ω(n*log(n))'''
+    '''Worst Case: θ(n^2)''' #Occurs when pivot is greatest or smallest item.
     if len(arr) <= 1:
         return arr
     
