@@ -1,14 +1,16 @@
 class QuickFind:
+    '''Uses site indexed array to determine whether two sites are connected to the same component'''
     def __init__(self, n):
+        self.count = n #number of non connected components 
         self.id = [i for i in range(n)] #site indexed array
+    
+    def find(self, p):
+        '''Returns id[p], value of that element on the sites'''
+        return self.id[p]
 
     def connected(self, p, q):
         '''Checks if components are connected -> Bool'''
         return self.id[p] == self.id[q]
-
-    def find(self, p):
-        '''Returns id[p], value of that element on the sites'''
-        return self.id[p]
 
     def union(self, p, q):
         '''Connects p to q by changing their values in id to the same'''
@@ -20,14 +22,21 @@ class QuickFind:
         for i in range(len(self.id)):
             if self.id[i] == pID:
                 self.id[i] = qID
+                self.count -= 1
         return None
 
-uf = QuickFind(10)
-#return True since 4 and 5 get connected, there should be 9 components now
-uf.union(4,5)
-print(uf.connected(4,5))
-#Should return False
-print(uf.connected(1,5))
-#Actually connects the, check if 1 is connected to 4 since 4 is connected to 5, should return True
-uf.union(1,5)
-print(uf.connected(1,4))
+if __name__ == "__main__":
+    uf = QuickFind(10)
+    print(str(uf.count) + " components")
+    #Should return False since these components aren't connected yet
+    print("Is 4 connected to 5: " + str(uf.connected(4,5)))
+    #return True since 4 and 5 are connected
+    uf.union(4,5)
+    print("Is 4 connected to 5: " + str(uf.connected(4,5)))
+
+    #Check if 1 is connected to 4 since 4 is connected to 5
+    print("Is 1 connected to 4: " + str(uf.connected(1,4)))
+    #1 is connected to 5 so now it should be connected to 4
+    uf.union(1,5)
+    print("Is 1 connected to 4: " + str(uf.connected(1,4)))
+    print(str(uf.count) + " components")
