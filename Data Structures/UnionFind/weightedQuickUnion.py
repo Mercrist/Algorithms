@@ -12,13 +12,16 @@ class WeightedQU(QuickUnion):
         if self.connected(p, q):
             return None
         
-        if self.size[self.find(p)] > self.size[self.find(q)]: #p is the bigger node, compare using size list 
-            self.id[self.find(q)] = self.find(p) 
-            self.size[self.find(p)] += self.size[self.find(q)] #add weight of q to p since p will be a "heavier" tree now
+        pRoot = self.find(p)
+        qRoot = self.find(q)
+        
+        if self.size[pRoot] > self.size[qRoot]: #p is the bigger node, compare using size list 
+            self.id[qRoot] = pRoot 
+            self.size[pRoot] += self.size[qRoot] #add weight of q to p since p will be a "heavier" tree now
             self.count -= 1
         else: #q is the bigger node
-            self.id[self.find(q)] = self.find(p) 
-            self.size[self.find(p)] += self.size[self.find(q)]
+            self.id[qRoot] = pRoot 
+            self.size[pRoot] += self.size[qRoot]
             self.count -= 1
         return None
 

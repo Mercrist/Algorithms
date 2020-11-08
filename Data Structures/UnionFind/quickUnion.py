@@ -21,7 +21,9 @@ class QuickUnion:
         '''Time complexity worst case: Tree height'''
         if self.connected(p, q):
             return None
-        self.id[self.find(p)] = self.find(q)
+        pRoot = self.find(p)
+        qRoot = self.find(q)
+        self.id[pRoot] = qRoot
         self.count -= 1
         return None
 
