@@ -6,6 +6,7 @@ class QuickFind:
     
     def find(self, p):
         '''Returns id[p], value of that element on the sites'''
+        '''Worst Case: Θ(1)'''
         return self.id[p]
 
     def connected(self, p, q):
@@ -14,6 +15,7 @@ class QuickFind:
 
     def union(self, p, q):
         '''Connects p to q by changing their values in id to the same'''
+        '''Worst Case: Θ(N)'''
         if self.connected(p, q):
             return None
 

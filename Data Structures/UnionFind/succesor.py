@@ -1,4 +1,4 @@
-class SuccesorDelete():
+class SuccesorDelete:
     def __init__(self, n): 
         self.id = [i for i in range(n)]
         #a succesor of x is the number that should be the root of x+1 but that root will have been deleted, succesor is the next largest num
